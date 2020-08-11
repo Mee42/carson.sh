@@ -1,0 +1,83 @@
+
+.title {
+  padding-bottom: 0;
+}
+.card {
+  //border: solid #3e3e3e 2px;
+  //border-radius: 10px;
+  margin: 15px 5px 5px;
+  display: flex;
+  flex-direction: column;
+  border: solid white 2px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.card:hover {
+  border-color: #979797;
+  //box-shadow: 1px 1px grey;
+}
+$transitionTime: 500ms;
+.card {
+  transition: border-bottom-color $transitionTime, border-top-color $transitionTime, border-left-color $transitionTime, border-right-color $transitionTime;
+  cursor: pointer;
+}
+.cardTitle {
+  text-align: left
+}
+.cardBottom {
+  display: flex;
+  flex-direction: row;
+}
+.cardDesc {
+  flex-grow: 1;
+  text-align: left;
+  font-size: 15px;
+}
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin-top: 10px;
+}
+.tag {
+  font-size: 12px;
+  display: inline-block;
+  padding: 0 1em;
+  margin: 2px 20px 2px 2px;
+  line-height: 2;
+  white-space: nowrap;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  transition: border-bottom-color 100ms;
+}
+.clickableTag:hover {
+  box-shadow: 1px 1px 3px #7d7d7d;
+  cursor: pointer;
+}
+.body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.selected {
+  background-color: #cecece;
+  border: solid 5px #cecece;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 3px 15px 3px 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  span {
+    font-size: 20px;
+    line-height: 1;
+    margin-right: 10px;
+    margin-bottom: 3px;
+  }
+}
+.cardList {
+  max-width: 750px;
+}

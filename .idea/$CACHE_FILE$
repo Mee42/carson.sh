@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/java/procord/workspace/FishBot" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/procord/workspace/GameBot" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/procord/workspace/KeyBot" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/procord/workspace/PokerBot" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/procord/workspace/Together" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/robotics/server" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/8QWithRecursion" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/BPDBot" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/Bots" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/Carson-Bot" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/CommunityBot" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/CoreBot" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/Discord4J" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/EvolutionTwo" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/GoogleData" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/GumboCoin" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/Map" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/Mindustry" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/SCRATCH" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/TestEval" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/bot-control" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/encryption" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/gumbocoin" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/gumbocoinv3" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/plugin" value="PREVIEW" />
+        <entry key="$USER_HOME$/java/workspace/xkcd936" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+</project>
