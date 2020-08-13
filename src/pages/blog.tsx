@@ -16,21 +16,6 @@ export default function Blog(props: { blogPosts: BlogPost[] }) {
 
 
 
-// const blogPostsX: BlogPost[] = [
-//     new BlogPost(
-//         1,
-//         "First Blog Post!",
-//         "This is going to be used for testing the UI till I write some better posts",
-//         ["kotlin", "haskell", "robotics"]
-//     ),
-//     new BlogPost(
-//         2,
-//         "Second Post :D",
-//         "This is some additional content that describes the post",
-//         ["kotlin"]
-//     )
-// // ]
-
 function Body(props: { blogPosts: BlogPost[] }): JSX.Element {
     const [selected, setSelected] = useState(["kotlin"])
     const toggleSelectedTag = tag => {
@@ -41,16 +26,21 @@ function Body(props: { blogPosts: BlogPost[] }): JSX.Element {
         }
     }
     return <div className={styles.body}>
-        <span>{ props.blogPosts }</span>
         <h3 className={styles.title}>Blog</h3>
         { Selected(selected, toggleSelectedTag) }
-        <ul className={styles.cardList}>
-            {
-                // blogPosts
-                //     .filter(post => selected.length === 0 || all(selected, tag => post.tags.indexOf(tag) != -1))
-                //     .map(post => <ul key={post.id}>{makePostCard(post, toggleSelectedTag)}</ul>)
-            }
-        </ul>
+        {/*<ul className={styles.cardList}>*/}
+            {(() => {
+                const filtered = props.blogPosts
+                    .filter(post => selected.length === 0 || all(selected, tag => post.tags.indexOf(tag) != -1))
+                if(filtered.length == 0) return <span className={styles.filteredOutEverything}>
+                    You're filtered out all the posts. Click tags above to remove them as filters
+                </span>
+                return <ul className={styles.cardList}>
+                    { filtered.map(post => <li key={post.id}>{makePostCard(post, toggleSelectedTag)}</li>) }
+                </ul>
+
+            }).call(null)}
+        {/*</ul>*/}
     </div>
 }
 function all<T>(array: T[], pred: (T) => boolean): boolean {
@@ -74,9 +64,12 @@ function makePostCard(post: BlogPost, toggleSelectedTag: (string) => void): JSX.
     return <div className={styles.card} key={post.id}>
         <div className={styles.cardTitle}>{post.title}</div>
         <div className={styles.cardDesc}>{post.desc}</div>
-        {<div className={styles.cardTags}>
-            {post.tags.map((tag, i) => makeTag(i, tag, () => toggleSelectedTag(tag)))}
-        </div>}
+        { makeTagList(post.tags, toggleSelectedTag) }
+    </div>
+}
+export function makeTagList(tags: string[], handler: (string) => void): JSX.Element {
+   return <div className={styles.cardTags}>
+        {tags.map((tag, i) => makeTag(i, tag, () => handler(tag)))}
     </div>
 }
 
@@ -85,21 +78,24 @@ const tagColor = {
     'haskell': '#ca49ca',
 }
 
-function makeTag(key: any, name: string, onClick: () => void | null): JSX.Element {
+export function makeTag(key: any, name: string, onClick: () => void | null): JSX.Element {
    return <div onClick={() => onClick != null && onClick()} key={key} className={styles.tag + ' ' + (onClick == null ? '' : styles.clickableTag)} style={{backgroundColor: tagColor[name] ?? 'white', borderColor: tagColor[name] ?? 'black'}}>{name}</div>
 }
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
+    return {
+        props: {
+            blogPosts: await getBlogPosts(fs)
+        }
+    }
+}
+export const getBlogPosts: (any) => Promise<BlogPost[]> = async (fs) => {
     const dir = path.join(process.cwd(), 'posts')
     const posts = fs.readdirSync(dir)
     const result = posts.map(filename => {
         const filepath = path.join(dir, filename)
         return fs.readFileSync(filepath, 'utf8')
     })
-    return {
-      props: {
-          blogPosts: result.map(parsePost)
-      }
-  }
+    return result.map(parsePost)
 }

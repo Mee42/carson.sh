@@ -1,40 +1,34 @@
 
-export class BlogPost {
-    id: number
-    title: string
-    desc: string
-    tags: string[]
-    content: string
 
-    constructor(id: number, title: string, desc: string, tags: string[], content: string) {
-        this.id = id;
-        this.title = title;
-        this.desc = desc;
-        this.tags = tags;
-        this.content = content;
-    }
+
+
+export type BlogPost = {
+    id: number,
+    title: string,
+    desc: string,
+    tags: string[],
+    content: string
 }
 
 
 export function parsePost(content: string): BlogPost {
     // assumes it to be in the proper format
     const sections: [string, string][] = content
-        .split(new RegExp("^=====>>>>>"))
+        .split(new RegExp("=====>>>>>"))
         .map(x => x.trim())
         .filter(x => x != "")
-        .map(x => splitByDelim(x, ':'))
-    console.log("sections: " + sections)
+        .map(x => splitByDelim(x, '\n'))
     const getSection: (string) => string = s => sections.filter(sec => sec[0] === s)[0][1]
     const headerSection = getSection("header").trim()
     const bodyContent = getSection("content").trim()
     const metadata = parseHeader(headerSection)
-    return new BlogPost(
-        metadata.id,
-        metadata.title,
-        metadata.desc,
-        metadata.tags,
-        bodyContent
-    )
+    return {
+        id: metadata.id,
+        title: metadata.title,
+        desc: metadata.desc,
+        tags: metadata.tags,
+        content: bodyContent
+    }
 }
 
 function splitByDelim(str: string, delim: string): [string, string] {
@@ -49,10 +43,14 @@ function parseHeader(header: string): { id: number, title: string, date: Date, t
         obj[key] = value
     }
     return {
-        id: parseInt(obj['id']),
-        title: obj['title'],
-        date: new Date(obj['date']),
-        tags: obj['tags'].split(" "),
-        desc: obj['desc']
+        id: parseInt(obj['id'] ?? error("can't find post id")),
+        title: obj['title'] ?? error("can't find post title"),
+        date: new Date(obj['date'] ?? error("can't find post date")),
+        tags: obj['tags']?.split(" ") ?? error("can't find post tags"),
+        desc: obj['desc'] ?? error("can't find post desc")
     }
+}
+
+function error(error: string): never {
+    throw new Error(error)
 }
