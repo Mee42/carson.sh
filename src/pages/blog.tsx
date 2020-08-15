@@ -6,6 +6,7 @@ import { GetStaticProps } from 'next'
 
 import fs from 'fs';
 import path from 'path';
+import Link from "next/link";
 
 export default function Blog(props: { blogPosts: BlogPost[] }) {
     return <div>
@@ -17,7 +18,7 @@ export default function Blog(props: { blogPosts: BlogPost[] }) {
 
 
 function Body(props: { blogPosts: BlogPost[] }): JSX.Element {
-    const [selected, setSelected] = useState(["kotlin"])
+    const [selected, setSelected] = useState([])
     const toggleSelectedTag = tag => {
         if(selected.indexOf(tag) == -1) {
             setSelected(selected.slice().concat(tag))
@@ -51,9 +52,9 @@ function all<T>(array: T[], pred: (T) => boolean): boolean {
 }
 
 function Selected(selected: string[], toggleSelectedTag: (string) => void): JSX.Element {
-    if(selected.length == 0) return <div/>
+    // if(selected.length == 0) return <div/>
     return <div className={styles.selected}>
-        <span>Selected: </span>
+        <span>Selected{selected.length == 0 ? " All" : ": "}</span>
         {
             selected.map((tag, i) => makeTag(i, tag, () => toggleSelectedTag(tag)))
         }
@@ -61,11 +62,13 @@ function Selected(selected: string[], toggleSelectedTag: (string) => void): JSX.
 }
 
 function makePostCard(post: BlogPost, toggleSelectedTag: (string) => void): JSX.Element {
-    return <div className={styles.card} key={post.id}>
-        <div className={styles.cardTitle}>{post.title}</div>
-        <div className={styles.cardDesc}>{post.desc}</div>
-        { makeTagList(post.tags, toggleSelectedTag) }
-    </div>
+    return <Link href={"/blog/" + post.id} key={post.id}>
+        <div className={styles.card}>
+            <div className={styles.cardTitle}>{post.title}</div>
+            <div className={styles.cardDesc}>{post.desc}</div>
+            <div style={{marginTop: "10px"}}> { makeTagList(post.tags, toggleSelectedTag) }</div>
+        </div>
+    </Link>
 }
 export function makeTagList(tags: string[], handler: (string) => void): JSX.Element {
    return <div className={styles.cardTags}>
@@ -79,7 +82,16 @@ const tagColor = {
 }
 
 export function makeTag(key: any, name: string, onClick: () => void | null): JSX.Element {
-   return <div onClick={() => onClick != null && onClick()} key={key} className={styles.tag + ' ' + (onClick == null ? '' : styles.clickableTag)} style={{backgroundColor: tagColor[name] ?? 'white', borderColor: tagColor[name] ?? 'black'}}>{name}</div>
+   return <div onClick={e => {
+       if(onClick != null) onClick();
+       e.stopPropagation();
+   }}
+               key={key}
+               onMouseDown={e => e.stopPropagation()}
+               className={styles.tag + ' ' + (onClick == null ? '' : styles.clickableTag)}
+               style={{backgroundColor: tagColor[name] ?? 'white', borderColor: tagColor[name] ?? 'black'}}>
+       {name}
+   </div>
 }
 
 
