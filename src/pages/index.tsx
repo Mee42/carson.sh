@@ -11,7 +11,7 @@ export default function Main() {
 function MainPage() {
   return <div className={styles.mainPage}>
     <div className={styles.centerElement}>
-      <h1>Carson Graham</h1>
+      <h1>Carson Graham TESTING TESTING TESTING</h1>
       <div className={styles.sidebarWrapper}>
         <div className={styles.block}/>
         <p>A High School Software Engineer Living in Fairfax Virginia</p>

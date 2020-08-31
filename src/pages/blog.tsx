@@ -7,6 +7,7 @@ import { GetStaticProps } from 'next'
 import fs from 'fs';
 import path from 'path';
 import Link from "next/link";
+import {useRouter} from "next/router";
 
 export default function Blog(props: { blogPosts: BlogPost[] }) {
     return <div>
@@ -16,9 +17,24 @@ export default function Blog(props: { blogPosts: BlogPost[] }) {
 }
 
 
+let firstRender: Boolean = true
 
 function Body(props: { blogPosts: BlogPost[] }): JSX.Element {
+
     const [selected, setSelected] = useState([])
+    const router = useRouter()
+    if(router.query != undefined && firstRender) {
+        console.log("QUERY DEFINED")
+        console.log(router.query)
+        const initial = router.query.initial as String | undefined
+        console.log("initial: " + initial)
+        if(initial != undefined) {
+            firstRender = false
+            console.log("setting initial")
+            setSelected(initial.split("|"))
+            router.push('/blog/', undefined, { shallow: true,  });
+        }
+    }
     const toggleSelectedTag = tag => {
         if(selected.indexOf(tag) == -1) {
             setSelected(selected.slice().concat(tag))

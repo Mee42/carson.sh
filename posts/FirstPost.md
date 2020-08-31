@@ -43,7 +43,7 @@ here is `some code exceprts` which should be in monospace and `markdown`.
 | ------- | ---- |
 | HTML    | low vibe |
 | markdown | high vibe |
-<marquee>marquee</marquee>
+
 > quoting someone
 > is nice
 

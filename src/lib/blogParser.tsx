@@ -34,7 +34,7 @@ export function parsePost(content: string): BlogPost {
 function splitByDelim(str: string, delim: string): [string, string] {
     const a = str.split(delim)
     //console.log("str:" + str);
-    return [a[0], a.slice(1).reduce((a,b) => a + delim + b)]
+    return [a[0], a.slice(1).reduce((a,b) => a + delim + b, "")]
 }
 
 function parseHeader(header: string): { id: number, title: string, date: Date, tags: string[], desc: string} {

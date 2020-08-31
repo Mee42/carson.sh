@@ -1,0 +1,24 @@
+body { 
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #131313;
+    color: white;
+}   
+h1 {
+    color: cornflowerblue;
+}
+h2, h3, h4, h5, h6 {
+    color: white;
+}
+li {
+    color: white;
+}
+p {
+    color: white;
+}
+code {
+    background-color: black;
+    color: #d7ba7d !important;
+}
+pre code {
+    color: black !important;
+}

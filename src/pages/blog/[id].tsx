@@ -7,15 +7,19 @@ import styles from "../../../styles/blogPost.module.scss";
 import ReactMarkdown from "react-markdown";
 import Prism from "prismjs";
 import CodeBlock from "../../lib/CodeBlock";
+import {useRouter} from "next/router";
 
 export default function Main(props: { id: number, post: BlogPost }) {
     const { id, post } = props
+    const router = useRouter()
     return <div className={styles.main}>
         <Header/>
         <div className={styles.titleBar}>
             <div className={styles.title}>{post.title}</div>
             <div className={styles.desc}>{post.desc}</div>
-            <div className={styles.tags}>{ makeTagList(post.tags, () => {})}</div>
+            <div className={styles.tags}>{ makeTagList(post.tags, (tag) => {
+                router.push('/blog/?initial=' + tag);
+            })}</div>
         </div>
         <div className={styles.content + ' ' + styles.post}>
             { render(post.content) }
@@ -24,12 +28,10 @@ export default function Main(props: { id: number, post: BlogPost }) {
 }
 function render(post: string): JSX.Element {
     const plugins = []
-    return <ReactMarkdown
-        escapeHtml={false}
-        source={post}
-        plugins={plugins}
-        renderers={{ code: CodeBlock }}
-    />
+    return <ReactMarkdown escapeHtml={false}
+                          source={post}
+                          plugins={plugins}
+                          renderers={{ code: CodeBlock }}/>
 }
 
 
