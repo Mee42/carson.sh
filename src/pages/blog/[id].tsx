@@ -36,6 +36,7 @@ function render(post: string): JSX.Element {
 
 
 
+// noinspection JSUnusedGlobalSymbols
 export async function getStaticProps(context) {
     const posts = await getBlogPosts(fs)
     return {
@@ -45,6 +46,7 @@ export async function getStaticProps(context) {
         }
     }
 }
+// noinspection JSUnusedGlobalSymbols
 export async function getStaticPaths() {
     const posts = await getBlogPosts(fs)
     return {

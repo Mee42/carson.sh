@@ -6,7 +6,7 @@ export default function Header() {
     return <header className={styles.header}>
         <Link href="/">
             <a className={styles.mainButton}>
-                <code>arson.ml</code>
+                <code>mee42.dev</code>
             </a>
         </Link>
         <HeaderElement href="/" title="Home"/>

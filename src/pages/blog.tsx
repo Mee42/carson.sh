@@ -77,7 +77,7 @@ function Selected(selected: string[], toggleSelectedTag: (string) => void): JSX.
     </div>
 }
 
-function makePostCard(post: BlogPost, toggleSelectedTag: (string) => void): JSX.Element {
+export function makePostCard(post: BlogPost, toggleSelectedTag: (string) => void): JSX.Element {
     return <Link href={"/blog/" + post.id} key={post.id}>
         <div className={styles.card}>
             <div className={styles.cardTitle}>{post.title}</div>

@@ -1,17 +1,22 @@
 import styles from '../../styles/index.module.scss'
 import React from "react";
-import Header from "../Header"
+import Header from "../Header";
+import { GetStaticProps } from 'next';
+import { getBlogPosts, makePostCard } from './blog';
+import fs from 'fs';
+import { BlogPost } from "../lib/blogParser";
+import {useRouter} from "next/router";
 
-export default function Main() {
+export default function Main(props: { blogPosts: BlogPost[]}) {
   return <div>
     <Header/>
-    <MainPage/>
+    <MainPage blogPosts={props.blogPosts}/>
   </div>
 }
-function MainPage() {
+function MainPage(props: { blogPosts: BlogPost[] }) {
   return <div className={styles.mainPage}>
     <div className={styles.centerElement}>
-      <h1>Carson Graham TESTING TESTING TESTING</h1>
+      <h1>Carson Graham</h1>
       <div className={styles.sidebarWrapper}>
         <div className={styles.block}/>
         <p>A High School Software Engineer Living in Fairfax Virginia</p>
@@ -19,31 +24,39 @@ function MainPage() {
     </div>
     <div className={styles.columnDiv}>
       <Left/>
-      <Right/>
+      <Right blogPosts={props.blogPosts}/>
     </div>
   </div>
 }
 
 function Left() {
   return <div className={styles.left}>
-    {/*carson@arson.ml <br/>*/}
     <div className={styles.linkbox}>
-      <a href="mailto:graham.@arson.ml">graham@c.arson.ml</a> <br/>
       <a href="mailto:carson42g@gmail.com">carson42g@gmail.com</a> <br/>
-      <a href="https://github.com/mee42" style={{justifyContent: 'center', alignContent: 'center', alignItems: 'center', display: 'flex'}}>
-        <img width="30px" src="GitHub-Mark.png" alt="the github logo"/>
-        <span>mee42</span>
-      </a> <br/>
+      <a href="https://github.com/mee42">github.com/mee42</a> <br/>
     </div>
 
     <code className={styles.gpgbox}>GPG: BB881A11F78A79D93FAB707D67D77A4726CF8D6F</code>
   </div>
 }
-function Right() {
+function Right(props: { blogPosts: BlogPost[]}) {
+  const router = useRouter()
   return <div className={styles.right}>
-    cool stuff I'm currently working on (?)
-    chat (????)
+    <span>Latest Post:</span>
+    { makePostCard(props.blogPosts[0], tag => {
+      router.push('/blog/?initial=' + tag); // go to that page
+    }) }
 
-    {/*{{ test }}*/}
+    
   </div>
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const x = await getBlogPosts(fs)
+  x.forEach(x => x.content = "")
+  return {
+        props: {
+            blogPosts: x
+        }
+    }
 }
