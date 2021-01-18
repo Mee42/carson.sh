@@ -7,7 +7,9 @@ export type BlogPost = {
     title: string,
     desc: string,
     tags: string[],
-    content: string
+    content: string,
+    url: string,
+    date: string
 }
 
 
@@ -27,6 +29,8 @@ export function parsePost(content: string): BlogPost {
         title: metadata.title,
         desc: metadata.desc,
         tags: metadata.tags,
+        url: metadata.url,
+        date: metadata.date,
         content: bodyContent
     }
 }
@@ -37,7 +41,7 @@ function splitByDelim(str: string, delim: string): [string, string] {
     return [a[0], a.slice(1).reduce((a,b) => a + delim + b, "")]
 }
 
-function parseHeader(header: string): { id: number, title: string, date: Date, tags: string[], desc: string} {
+function parseHeader(header: string): { id: number, title: string, date: string, tags: string[], desc: string, url: string} {
     const obj = {}
     for (const [key, value] of header.split("\n").map(it => it.trim().split(":", 2).map(it => it.trim()))) {
         obj[key] = value
@@ -45,9 +49,10 @@ function parseHeader(header: string): { id: number, title: string, date: Date, t
     return {
         id: parseInt(obj['id'] ?? error("can't find post id")),
         title: obj['title'] ?? error("can't find post title"),
-        date: new Date(obj['date'] ?? error("can't find post date")),
+        date: obj['date'] ?? error("can't find post date"),
         tags: obj['tags']?.split(" ") ?? error("can't find post tags"),
-        desc: obj['desc'] ?? error("can't find post desc")
+        desc: obj['desc'] ?? error("can't find post desc"),
+        url: obj['url'] ?? 'there-is-no-url-desc-yet'
     }
 }
 

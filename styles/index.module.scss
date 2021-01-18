@@ -8,6 +8,9 @@
   a:hover {
     color: #002b3e;
   }
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .centerElement {
@@ -36,7 +39,6 @@
 }
 
 
-
 .columnDiv {
   margin-top: 70px;
   margin-left: 5%;
@@ -60,22 +62,28 @@
 .left, .right {
   font-size: 2vmin;
 }
-
-.left {
-  border: 1px solid black;
+.monospace {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+.left {
+  //border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
   .linkbox {
-    text-align: left;
-    width: fit-content;
+    margin-top: 10px;
+    width: 100%;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    text-align: center;
+    //width: fit-content;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     a {
       margin-top: 10px;
     }
+    font-size: 15px;
   }
   .gpgbox {
     background-color: black;
@@ -88,18 +96,17 @@
     //border: solid black 3px
     border-top: solid black 3px;
     border-bottom: solid black 3px;
+    font-size: 15px;
     //border-radius: 3px;
   }
-  font-size: 15px;
 }
 
 .right {
-  border: 1px solid black;
+  //border: 1px solid black;
   text-align: left;
-  padding-top: 10px;
+  //padding-top: 10px;
   span {
     padding-left: 10px;
-    font-family: source-code-pro, Monlo, Monaco, Consolas, 'Courier New', monospace;
   }
   > div {
     margin-top: 5px;

@@ -1,6 +1,7 @@
 =====>>>>> header
 id: 3
 title: How to (not) mess up Git
+url: how-not-to-mess-up-git
 desc: Git is more then memorizing a few commands and rm -rf * when things go south. Using git properly is important.
 date: 2020-08-21
 tags: unreleased

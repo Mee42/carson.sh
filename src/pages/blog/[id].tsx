@@ -1,25 +1,31 @@
-import {getBlogPosts, makeTagList} from "../blog";
+import {getBlogPosts} from "../blog";
 import fs from 'fs';
 import {BlogPost} from "../../lib/blogParser";
 import Header from "../../Header";
 import React from "react";
 import styles from "../../../styles/blogPost.module.scss";
 import ReactMarkdown from "react-markdown";
-import Prism from "prismjs";
 import CodeBlock from "../../lib/CodeBlock";
-import {useRouter} from "next/router";
+import Head from "next/head";
 
-export default function Main(props: { id: number, post: BlogPost }) {
+export default function Main(props: { id: number, post: BlogPost, urlParam: string }) {
     const { id, post } = props
-    const router = useRouter()
     return <div className={styles.main}>
+        <Head>
+            <title>mee42.dev | { post.title }</title>
+            <meta property="og:site_name" content="Mee42.dev"/>
+            <meta property="og:title" content={ post.title } />
+            <meta property="og:type" content="website"/>
+            <meta property="og:url" content={"https://mee42.dev/blog/" + id+ '#' + post.url}/>
+            <meta property="og:description" content={ post.desc }/>
+        </Head>
+
+
         <Header/>
         <div className={styles.titleBar}>
             <div className={styles.title}>{post.title}</div>
             <div className={styles.desc}>{post.desc}</div>
-            <div className={styles.tags}>{ makeTagList(post.tags, (tag) => {
-                router.push('/blog/?initial=' + tag);
-            })}</div>
+            {/*TODO add the tags to the blog page anyway*/}
         </div>
         <div className={styles.content + ' ' + styles.post}>
             { render(post.content) }
