@@ -21,7 +21,7 @@ export default function Main(props: { id: number, post: BlogPost, urlParam: stri
         </Head>
 
 
-        <Header/>
+        <Header title={post.title}/>
         <div className={styles.titleBar}>
             <div className={styles.title}>{post.title}</div>
             <div className={styles.desc}>{post.desc}</div>

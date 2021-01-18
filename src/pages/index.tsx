@@ -8,7 +8,7 @@ import { BlogPost } from "../lib/blogParser";
 
 export default function Main(props: { blogPosts: BlogPost[]}) {
   return <div>
-    <Header/>
+    <Header title={null}/>
     <MainPage blogPosts={props.blogPosts}/>
   </div>
 }

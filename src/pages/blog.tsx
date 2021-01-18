@@ -9,7 +9,7 @@ import path from 'path';
 
 export default function Blog(props: { blogPosts: BlogPost[] }) {
     return <div>
-        <Header/>
+        <Header title={"Blog"}/>
         <Body blogPosts={props.blogPosts}/>
     </div>
 }
