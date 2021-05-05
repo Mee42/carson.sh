@@ -28,4 +28,4 @@ Turns out, in my case, I had a bad SATA cable. In addition to that, it seems lik
 
 ### Update
 
-Turns out it was only a temporary fix. I had to replace the motherboard anda drive. If you get `blk_update_request: I/O error`, backup your stuff.
+Turns out it was only a temporary fix. I had to replace the motherboard and drive. If you get `blk_update_request: I/O error`, backup your stuff.
