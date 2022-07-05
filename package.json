@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "nextbuild": "next build",
+    "nextexport": "next export"
   },
   "dependencies": {
     "critters": "^0.0.16",

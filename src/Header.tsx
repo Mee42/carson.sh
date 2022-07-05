@@ -8,7 +8,7 @@ export default function Header(props: { title: String | null }) {
     return <header className={styles.header}>
         <Head>
             <html lang={"en-US"}/>
-            <title>{props.title === null ? "mee42.dev" : "mee42.dev | " + props.title}</title>
+            <title>{props.title === null ? "carson.sh" : "carson.sh | " + props.title}</title>
         </Head>
         <a href="/" className={styles.mainButton}>
             <code>carson.sh</code>

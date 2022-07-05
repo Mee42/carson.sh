@@ -20,7 +20,7 @@ function MainPage(props: { blogPosts: BlogPost[] }) {
       <h1>Carson Graham</h1>
       <div className={styles.sidebarWrapper}>
         <div className={styles.block}/>
-        <p>A High School Software Engineer Living in Fairfax Virginia</p>
+        <p>Developer, Student at Worcester Polytechnic Institute</p>
       </div>
     </div>
     <div className={styles.columnDiv}>
@@ -42,7 +42,7 @@ function Left() {
   </div>
 }
 function Right(props: { blogPosts: BlogPost[]}) {
-  const posts = props.blogPosts.filter(x => x.tags.indexOf('unreleased') == -1)
+  const posts = props.blogPosts.filter(x => x.tags.indexOf('unreleased') == -1).reverse()
   
   return <div className={styles.right}>
     <span>Recent Blog Posts. <a href={"/blog/"} style={{fontSize: "90%"}}>See More.</a></span>

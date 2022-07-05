@@ -24,7 +24,7 @@ function Body(props: { blogPosts: BlogPost[] }): JSX.Element {
         <h3 className={styles.title}>Blog</h3>
         {(() => {
             const filtered = props.blogPosts
-                .filter(post => post.tags.indexOf('unreleased') == -1)
+                .filter(post => post.tags.indexOf('unreleased') == -1).reverse()
             if(filtered.length == 0) return <span className={styles.filteredOutEverything}>There doesn't seem to be any posts here</span>
             return makePostList(filtered) 
 

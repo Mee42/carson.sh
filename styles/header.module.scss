@@ -55,6 +55,13 @@
   background-color: black;
   margin: 10px;
   padding: 5px 10px;
+  border: 1px solid white;
+  transition: 500ms;
+}
+.mainButton:hover {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
 }
 
 .header:hover {

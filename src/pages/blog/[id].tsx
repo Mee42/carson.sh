@@ -8,6 +8,10 @@ import ReactMarkdown from "react-markdown";
 import CodeBlock from "../../lib/CodeBlock";
 import Head from "next/head";
 
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import {dark} from 'react-syntax-highlighter/dist/esm/styles/prism'
+
+
 export const config = {unstable_runtimeJS: false}
 
 export default function Main(props: { id: number, post: BlogPost, urlParam: string }) {
@@ -35,13 +39,33 @@ export default function Main(props: { id: number, post: BlogPost, urlParam: stri
     </div>
 }
 function render(post: string): JSX.Element {
-    const plugins = []
+    const plugins = [];
+    const components = {
+      code({node, inline, className, children, ...props}) {
+        const match = /language-(\w+)/.exec(className || '')
+        return !inline && match ? (
+          <SyntaxHighlighter
+            children={String(children).replace(/\n$/, '')}
+            
+            language={match[1]}
+            PreTag="div"
+            {...props}
+          />
+        ) : (
+          <code className={className} {...props}>
+            {children}
+          </code>
+        )
+      }
+    };
+    
+    return <ReactMarkdown children={post} components={components}/>
 //    return <ReactMarkdown 
 //                          source={post}
 //                          plugins={plugins}
 //                          renderers={{ code: CodeBlock }}/>
 
-    return <p>unimplemented</p>
+//    return <p>unimplemented</p>
 }
 
 
