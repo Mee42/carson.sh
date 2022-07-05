@@ -8,6 +8,8 @@ import ReactMarkdown from "react-markdown";
 import CodeBlock from "../../lib/CodeBlock";
 import Head from "next/head";
 
+export const config = {unstable_runtimeJS: false}
+
 export default function Main(props: { id: number, post: BlogPost, urlParam: string }) {
     const { id, post } = props
     return <div className={styles.main}>

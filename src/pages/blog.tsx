@@ -7,6 +7,8 @@ import { GetStaticProps } from 'next'
 import fs from 'fs';
 import path from 'path';
 
+export const config = {unstable_runtimeJS: false}
+
 export default function Blog(props: { blogPosts: BlogPost[] }) {
     return <div>
         <Header title={"Blog"}/>

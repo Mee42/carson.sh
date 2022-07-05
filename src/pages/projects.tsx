@@ -1,5 +1,7 @@
 import React from "react";
 
+export const config = {unstable_runtimeJS: false}
+
 export default function Projects() {
     return <div style={{color:"#000",background:"#fff",height:'100vh',textAlign:'center',display:'flex',flexDirection:'column',alignItems:'center', justifyContent:'center' }}>
         <div>
