@@ -1,5 +1,5 @@
 {
-  "name": "arson.ml",
+  "name": "carson.sh",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,18 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.5.1",
-    "prismjs": "^1.21.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-markdown": "^4.3.1",
-    "react-syntax-highlighter": "^13.4.0",
-    "remark-highlight.js": "^6.0.0",
-    "sass": "^1.26.10"
+    "next": "*",
+    "prismjs": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-markdown": "*",
+    "react-syntax-highlighter": "*",
+    "remark-highlight.js": "*",
+    "sass": "*"
   },
   "devDependencies": {
-    "@types/node": "^14.0.27",
-    "@types/react": "^16.9.45",
-    "typescript": "^3.9.7"
+    "@types/node": "*",
+    "@types/react": "*",
+    "typescript": "*"
   }
 }

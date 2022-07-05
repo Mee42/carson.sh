@@ -19,7 +19,7 @@ export function parsePost(content: string): BlogPost {
         .split(new RegExp("=====>>>>>"))
         .map(x => x.trim())
         .filter(x => x != "")
-        .map(x => splitByDelim(x, '\n'))
+        .map(x => splitByDelim(x, '\r\n'))
     const getSection: (string) => string = s => sections.filter(sec => sec[0] === s)[0][1]
     const headerSection = getSection("header").trim()
     const bodyContent = getSection("content").trim()

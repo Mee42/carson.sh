@@ -34,10 +34,12 @@ export default function Main(props: { id: number, post: BlogPost, urlParam: stri
 }
 function render(post: string): JSX.Element {
     const plugins = []
-    return <ReactMarkdown escapeHtml={false}
-                          source={post}
-                          plugins={plugins}
-                          renderers={{ code: CodeBlock }}/>
+//    return <ReactMarkdown 
+//                          source={post}
+//                          plugins={plugins}
+//                          renderers={{ code: CodeBlock }}/>
+
+    return <p>unimplemented</p>
 }
 
 

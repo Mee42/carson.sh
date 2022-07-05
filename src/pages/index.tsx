@@ -6,6 +6,8 @@ import { getBlogPosts, makePostList } from './blog';
 import fs from 'fs';
 import { BlogPost } from "../lib/blogParser";
 
+export const config = {unstable_runtimeJS: false}
+
 export default function Main(props: { blogPosts: BlogPost[]}) {
   return <div>
     <Header title={null}/>

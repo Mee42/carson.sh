@@ -11,7 +11,7 @@ export default function Header(props: { title: String | null }) {
             <title>{props.title === null ? "mee42.dev" : "mee42.dev | " + props.title}</title>
         </Head>
         <a href="/" className={styles.mainButton}>
-            <code>mee42.dev</code>
+            <code>carson.sh</code>
         </a>
         <HeaderElement href="/" title="Home"/>
         <HeaderElement href="/projects" title="Projects"/>
