@@ -58,7 +58,7 @@ function render(post: string): JSX.Element {
         )
       }
     };
-    
+    //return <p>todo</p> 
     return <ReactMarkdown children={post} components={components}/>
 //    return <ReactMarkdown 
 //                          source={post}
