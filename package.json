@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "critters": "^0.0.16",
     "next": "*",
     "prismjs": "*",
     "react": "*",
