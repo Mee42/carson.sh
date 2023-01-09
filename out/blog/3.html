@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta property="og:site_name" content="Mee42.dev"><meta property="og:title" content="How to (not) mess up Git"><meta property="og:type" content="website"><meta property="og:url" content="https://mee42.dev/blog/3#how-not-to-mess-up-git"><meta property="og:description" content="Git is more then memorizing a few commands and rm -rf * when things go south. Using git properly is important."></head><body><title>carson.sh | How to (not) mess up Git</title><meta name="next-head-count" content="9"><style>body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}code{font-family:source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace}body{text-align:center;background-color:#fff;min-height:100vh;align-items:center;justify-content:center;color:#000}a{text-decoration:none;color:#417ca3;transition:color .25s}a:hover{color:#002b3e}.header_header__FfSP_{background-color:#fff;z-index:1;color:#000;font-size:1rem;line-height:1.5;position:-webkit-sticky;position:sticky;left:0;top:0;display:flex;flex-direction:row}.header_header__FfSP_ *{margin-left:3em}.header_header__FfSP_ * *{margin-left:0}.header_header__FfSP_ div{display:flex;flex-direction:column}.header_header__FfSP_ div a{color:#000;padding-bottom:0;padding-top:0}.header_header__FfSP_ div .header_withGrow__v2i8T{flex-grow:1}.header_header__FfSP_ div .header_bottomBorder___i6c3{height:1px;background-color:#fff;transition:background-color .5s}.header_header__FfSP_ div:hover .header_bottomBorder___i6c3{background-color:#000}.header_header__FfSP_ a{text-decoration:none}.header_mainButton__no_Oz{color:#fff;background-color:#000;margin:10px;padding:5px 10px;border:1px solid #fff;transition:.5s}.header_mainButton__no_Oz:hover{color:#000;background-color:#fff;border:1px solid #000}.header_header__FfSP_:hover{border-bottom:1px solid hsla(0,0%,50%,.412)}.header_header__FfSP_{border-bottom:1px solid #fff;transition:border-bottom-color .2s}.blogPost_titleBar__IDB6E{display:flex;flex-direction:column;max-width:950px;text-align:left;margin-left:auto;margin-right:auto;margin-top:50px}.blogPost_titleBar__IDB6E .blogPost_title__c_DDP{font-size:40px}.blogPost_titleBar__IDB6E .blogPost_desc__zbW9g{margin-top:10px;font-size:15px}.blogPost_content__11Fk6{max-width:750px;margin-left:auto;margin-right:auto;text-align:left;padding-bottom:250px}.blogPost_post__CGKU6 pre *{line-height:0;margin:0;padding:0}.blogPost_post__CGKU6 code{background-color:#fbedd4;border:3px #fbedd4;border-radius:3px}</style><link rel="stylesheet" href="/_next/static/css/04dd4dff49ffcaac.css" data-n-g="" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/_next/static/css/04dd4dff49ffcaac.css"></noscript><link rel="stylesheet" href="/_next/static/css/e29ef9c2db40262f.css" data-n-p="" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/_next/static/css/e29ef9c2db40262f.css"></noscript><noscript data-n-css=""></noscript><div id="__next"><div><header class="header_header__FfSP_"><a href="/" class="header_mainButton__no_Oz"><code>carson.sh</code></a><div><div class="header_withGrow__v2i8T"></div><a href="/">Home</a><div class="header_withGrow__v2i8T"></div><div class="header_bottomBorder___i6c3"></div></div><div><div class="header_withGrow__v2i8T"></div><a href="/projects">Projects</a><div class="header_withGrow__v2i8T"></div><div class="header_bottomBorder___i6c3"></div></div><div><div class="header_withGrow__v2i8T"></div><a href="/blog">Blog</a><div class="header_withGrow__v2i8T"></div><div class="header_bottomBorder___i6c3"></div></div><div><div class="header_withGrow__v2i8T"></div><a href="https://github.com/mee42/">Github</a><div class="header_withGrow__v2i8T"></div><div class="header_bottomBorder___i6c3"></div></div></header><div class="blogPost_titleBar__IDB6E"><div class="blogPost_title__c_DDP">How to (not) mess up Git</div><div class="blogPost_desc__zbW9g">Git is more then memorizing a few commands and rm -rf * when things go south. Using git properly is important.</div></div><div class="blogPost_content__11Fk6 blogPost_post__CGKU6"><p>Git is hard! A lot of people I know only know a couple git commands</p>
+<pre><code>$ git add -A .
+$ git commit -m $message
+$ git checkout $branch
+$ git push origin $branch
+</code></pre>
+<p>and while this works for 90% of all work done on git, it's woefully incompetent at the other 10%: fixing shit when it breaks.</p>
+<p><em>Now, just to note, git rarely "breaks". It's almost always the developer doing something they shoudn't have.</em></p>
+<p>This document is going te be a brief summary on some major misconceptions of Git, and then some specific helpful examples that I've needed to use in my time working with Git, or helping other people with them.</p>
+<h2>What branches are</h2>
+<p>Branches are reference to commits. To rephrase that, a branch is just a pointers to a specific commit.</p>
+<p>When you are working in git, you have this reference called HEAD, which refers to the current working commit.
+You are always "on" a specific commit, which is reflected in the current state of the source code.
+With git the was you change between commits is the <code>git checkout</code> command.</p>
+<p>There's also "detached head" state, where you do not live on a branch but instead a specific commit, named by its hash. This is unusual, but worth noting.</p>
+<p><strong>A key point here is that branches don't technically have multiple commits.</strong></p>
+<p>Branches are a single commit, and each commit is some changes plus it's parent(s).
+Here's a quick example:</p>
+<pre><code> a -&gt; b -&gt; c -&gt; d     &lt;--- master
+      \
+       \--&gt; e -&gt; f    &lt;--- dev
+</code></pre>
+<p><code>a</code> is the initial commit. For the purpose of this page, there is only ever one inital commit - while there can be others, merging them isn't really done.</p>
+<p>You might look at this and say "okay, well, <code>e</code> is on the <code>dev</code> branch. And, you'd be almost correct.
+While dev does encompase <code>e</code>, and <code>e</code> is "on dev", the <code>e</code> commit contains exactly zero information about the <code>dev</code> branch.
+You can see that in the next step:</p>
+<pre><code> a -&gt; b -&gt; c -&gt; d -----&gt; g    &lt;--- master
+      \                 /\
+       \--&gt; e -&gt; f -----/
+</code></pre>
+<p>In this step, we merged dev into <code>g</code> with a merge commit.</p>
+<p>Now what branch is <code>e</code> on? It's actually on master - but when you commited, you commited to dev!
+Doing a very basic <code>git log</code> will just show you <code>g, f, d, e, c, b, a</code>, which has no way to tell the difference between commits done on dev and commits done on master.</p>
+<p>This could be an issue if you wanted to have broken code on dev (say commit <code>e</code> doesn't work), and now all the sudden it's on master! Some git loggers will properly split the commits so they visually appear on a different history path then the master branch, but they're still 100% on the master branch without the context of dev.</p>
+<h2>Some common Git problems</h2>
+<h4>I made a commit to the wrong branch!</h4>
+<pre><code>a -&gt; b -&gt; c   &lt;--- master
+</code></pre>
+<p>Whoops, you wanted to make the <code>c</code> commit on <code>dev</code>! This happens to me at least once a week.
+The fix is easy, but you have to be careful because it involves rewriting history.</p>
+<pre><code>$ git reset --soft HEAD~1
+</code></pre>
+<p>This will reset your git repo to <code>HEAD~1</code> (meaning the commit before <code>HEAD</code>), but because it's a <code>--soft</code> reset, it'll keep all the changes in that commit and put them back into staging. Then you can</p>
+<pre><code>$ git checkeout -b dev
+$ git commit
+</code></pre>
+<h4>I made a commit to the wrong branch and pushed it!</h4>
+<p>First, check with everyone who works on the project to make sure they haven't touched anything yet.
+If they haven't, you can delete the <code>c</code> commit on master with a force push</p>
+<pre><code>$ git push --force origin master
+</code></pre>
+<p>However, this is <em>not good</em> and should be avoided if possible. Branch protection rules are offered by GitHub and GitLab, use them if you need to.</p>
+<h4>I made a commit and now there's a merge conflict</h4></div></div></div></body></html>

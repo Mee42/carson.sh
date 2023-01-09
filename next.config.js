@@ -1,5 +1,8 @@
 module.exports = {
   experimental: {
-    optimizeCss: true
-  }
+    optimizeCss: true,
+	  images: {
+		  unoptimized: true,
+	  }
+  },
 }
