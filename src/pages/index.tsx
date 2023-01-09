@@ -20,7 +20,7 @@ function MainPage(props: { blogPosts: BlogPost[] }) {
       <h1>Carson Graham</h1>
       <div className={styles.sidebarWrapper}>
         <div className={styles.block}/>
-        <p>Developer, Student at Worcester Polytechnic Institute</p>
+        <p>Engineer, Software Developer. <br/> Student at Worcester Polytechnic Institute</p>
       </div>
     </div>
     <div className={styles.columnDiv}>
@@ -38,7 +38,7 @@ function Left() {
       <a href="https://github.com/mee42">github.com/mee42</a> <br/>
     </div>
 
-    <code className={styles.gpgbox + " " + styles.monospace}>GPG: BB881A11F78A79D93FAB707D67D77A4726CF8D6F</code>
+    <code className={styles.gpgbox + " " + styles.monospace}>arson#5069</code>
   </div>
 }
 function Right(props: { blogPosts: BlogPost[]}) {
@@ -50,7 +50,7 @@ function Right(props: { blogPosts: BlogPost[]}) {
   </div>
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const x = await getBlogPosts(fs)
   x.forEach(x => x.content = "")
   return { props: { blogPosts: x } }

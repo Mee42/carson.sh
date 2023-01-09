@@ -8,6 +8,7 @@ export default function Header(props: { title: String | null }) {
     return <header className={styles.header}>
         <Head>
             <html lang={"en-US"}/>
+
             <title>{props.title === null ? "carson.sh" : "carson.sh | " + props.title}</title>
         </Head>
         <a href="/" className={styles.mainButton}>

@@ -1,0 +1,39 @@
+.project {
+  border-radius: 15px;
+  border: rgba(10, 10, 10, 0.1) 1px solid;
+
+  padding: 15px;
+  border-radius: 15px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+}
+.projectTop {
+  display: flex;
+  flex-direction: row;
+}
+
+.projectBottom {
+	margin-top: 15px;
+	display: none;
+}
+.projectBottom:target {
+	display: block;
+}
+
+.project:hover {
+  border: rgba(10, 10, 10, 0.5) 1px solid;
+}
+
+.projectContent {
+	display: flex;
+	flex-direction: column;
+}
+
+.projectBox {
+	text-align: left;
+}
