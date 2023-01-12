@@ -101,7 +101,7 @@ function Project(props: { project: ProjectData, key: number }): JSX.Element {
 		<a className={styles.project} href={"#" + props.project.id}>
 			<div className={styles.projectTop}>
 				{(typeof props.project.icon) === "string" ? 
-					<Image src={props.project.icon as string} alt={props.project.alt} width="100px" height="100px" style={{ zIndex: 0 }}/>
+					<Image src={props.project.icon as string} alt={props.project.alt} width="100" height="100" style={{ zIndex: 0 }}/>
 					: props.project.icon
 				}
 				<div className={styles.projectContent}>

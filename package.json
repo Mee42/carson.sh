@@ -10,7 +10,7 @@
     "nextexport": "next export"
   },
   "dependencies": {
-    "critters": "^0.0.16",
+    "critters": "*",
     "next": "*",
     "prismjs": "*",
     "react": "*",
