@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Header from "../Header"
 import styles from '../../styles/projects.module.scss'
@@ -97,8 +97,11 @@ export default function Projects() {
 }
 
 function Project(props: { project: ProjectData, key: number }): JSX.Element {
-	return <div key={props.key}>
-		<a className={styles.project} href={"#" + props.project.id}>
+
+	const [visible, setVis] = useState(false);
+
+	return <div key={props.key} onClick={() => setVis(!visible)}>
+		<div className={styles.project}> 
 			<div className={styles.projectTop}>
 				{(typeof props.project.icon) === "string" ? 
 					<Image src={props.project.icon as string} alt={props.project.alt} width="100" height="100" style={{ zIndex: 0 }}/>
@@ -111,8 +114,9 @@ function Project(props: { project: ProjectData, key: number }): JSX.Element {
 					{props.project.desc}
 				</div>
 			</div>
-			<div className={styles.projectBottom} id={props.project.id}>
-				Hello, wrold!
+			<div className={styles.projectBottom} id={props.project.id}
+				 style={{ display: visible?"block":"none"}}>
+				Hello, world!
 				this is some text that I wrote! I hope you enjoy
 				this is some text that I wrote! I hope you enjoy
 				this is some text that I wrote! I hope you enjoy
@@ -122,6 +126,6 @@ function Project(props: { project: ProjectData, key: number }): JSX.Element {
 				this is some text that I wrote! I hope you enjoy
 				this is some text that I wrote! I hope you enjoy
 			</div>
-		</a>
+		</div>
 	</div>
 }
