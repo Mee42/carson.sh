@@ -4,7 +4,7 @@ title: Repairing a Macintosh Classic
 url: mac_repair
 desc: Repairing a nonfunctional 1992 Mac Classic (Hopefully!) 
 date: 2022-01-14
-tags: hardware troubleshooting
+tags: hardware troubleshooting unreleased
 =====>>>>> content
 
 The Macintosh Classic
