@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Header from "../Header"
 import styles from '../../styles/projects.module.scss'
@@ -15,6 +15,7 @@ type ProjectData = {
 	icon: string | JSX.Element,
 	alt?: string,
 	id: string,
+	content: JSX.Element,
 }
 
 const emptyBox = <div style={{width: '100px', height: '100px'}}></div>;
@@ -29,6 +30,12 @@ const projects: ProjectData[] = [
 		</div>,
 		icon: "/favicon.ico",
 		alt: "A blue triangle, the favicon",
+		content: <div>
+		NextJS, React, Typescript(X), SCSS, all that fancy stuff - but zero client-side JS.
+		You can check out the github <a href="https://github.com/mee42/carson.sh">here</a>, and even steal a bit if you'd like. Fully designed and styled by me, built up over a couple years of incredible procrastination.
+
+		The chance I ever work on a less modern web stack is slim to none. This CSS stuff is terrible even with all this fancy equipement.
+		</div>,
 	},
 	{
 		title: "Weather Box",
@@ -37,6 +44,7 @@ const projects: ProjectData[] = [
 			A tiny box that tells you the weather and the forcast!
 		</div>,
 		icon: emptyBox, alt: "an empty square",
+		content: <></>,
 	},
 	{
 		title: "16bit CPU",
@@ -45,6 +53,7 @@ const projects: ProjectData[] = [
 			A "functional" (in progress) CPU build entirely on breadboards with 74-series logic chips
 		</div>,
 		icon: emptyBox, alt: "an empty square",
+		content: <></>,
 	},
 	{
 		title: "KSP Control Panel",
@@ -53,6 +62,7 @@ const projects: ProjectData[] = [
 			A physical rocket cockpit control board to sit below my monitor, to control rockets in Kerbal Space Program with.
 		</div>,
 		icon: emptyBox, alt: "an empty square",
+		content: <></>,
 	},
 	{
 		title: "Whiteboard bot",
@@ -61,6 +71,7 @@ const projects: ProjectData[] = [
 			A robot to draw arbitrary lines on huge whiteboards with high precision
 		</div>,
 		icon: emptyBox, alt: "an empty square",
+		content: <></>,
 	},
 	{
 		title: "Xenon",
@@ -69,6 +80,7 @@ const projects: ProjectData[] = [
 			A compiler built for a custom designed, C-like language that compiled directly to x86_64 assembly
 		</div>,
 		icon: emptyBox, alt: "an empty square",
+		content: <></>,
 	},
 	{
 		title: "Threeboard",
@@ -78,6 +90,7 @@ const projects: ProjectData[] = [
 			Firmware built from the ground up on ATSAMD THUMB processors. USB HID code never worked.
 		</div>,
 		icon: emptyBox, alt: "an empty square",
+		content: <></>,
 	},
 
 	
@@ -88,6 +101,7 @@ const projects: ProjectData[] = [
 export default function Projects() {
 	return <div>
 		<Header title={"projects"} />
+		<h1>Projects</h1>
 		<div style={{ color: "#000", background: "#fff", height: '100vh', textAlign: 'center', display: 'block' }}>
 			<div className={styles.projectBox}>
 				{projects.map((it, i) => <Project project={it} key={i}/>)}
@@ -96,11 +110,11 @@ export default function Projects() {
 	</div>
 }
 
-function Project(props: { project: ProjectData, key: number }): JSX.Element {
+function Project(props: { project: ProjectData }): JSX.Element {
 
-	const [visible, setVis] = useState(false);
+	//const [visible, setVis] = useState(false);
 
-	return <div key={props.key} onClick={() => setVis(!visible)}>
+	return <div>
 		<div className={styles.project}> 
 			<div className={styles.projectTop}>
 				{(typeof props.project.icon) === "string" ? 
@@ -114,17 +128,8 @@ function Project(props: { project: ProjectData, key: number }): JSX.Element {
 					{props.project.desc}
 				</div>
 			</div>
-			<div className={styles.projectBottom} id={props.project.id}
-				 style={{ display: visible?"block":"none"}}>
-				Hello, world!
-				this is some text that I wrote! I hope you enjoy
-				this is some text that I wrote! I hope you enjoy
-				this is some text that I wrote! I hope you enjoy
-				this is some text that I wrote! I hope you enjoy
-				this is some text that I wrote! I hope you enjoy
-				this is some text that I wrote! I hope you enjoy
-				this is some text that I wrote! I hope you enjoy
-				this is some text that I wrote! I hope you enjoy
+			<div className={styles.projectBottom} id={props.project.id}>
+				{props.project.content}
 			</div>
 		</div>
 	</div>

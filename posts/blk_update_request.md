@@ -23,9 +23,9 @@ It never hurts.
 For a quick background on the error, a `blk_update_request: I/O error` is an issue with interfacing
 with a data drive. You can see what drive my error is affecting (`/dev/sda`), and that it failed while trying to access sector `1669071536`.
 
-Turns out, in my case, I had a bad SATA cable. In addition to that, it seems like my motherboard *doesn't support* specific combinations of SATA port uses. When using ports #1 and #2, for example, only the first would be accessible. When using ports #1 and #3, it would freeze on boot. When using some other combinations, 
+Turns out, in my case, I had a bad SATA cable. In addition to that, it seems like my motherboard *doesn't support* specific combinations of SATA port uses. When using ports #1 and #2, for example, only the first would be accessible. When using ports #1 and #3, it would freeze on boot. When using some other combinations, it would work.
 
 
 ### Update
 
-Turns out it was only a temporary fix. I had to replace the motherboard and drive. If you get `blk_update_request: I/O error`, backup your stuff.
+**Turns out it was only a temporary fix. I had to replace the motherboard and drive. If you get `blk_update_request: I/O error`, check to make sure your backups still function properly.**

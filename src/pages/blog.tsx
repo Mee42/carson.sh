@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../Header";
 import styles from "../../styles/blog.module.scss";
 import { BlogPost, parsePost } from "../lib/blogParser";
@@ -21,7 +21,7 @@ export default function Blog(props: { blogPosts: BlogPost[] }) {
 function Body(props: { blogPosts: BlogPost[] }): JSX.Element {
 
     return <div className={styles.body}>
-        <h3 className={styles.title}>Blog</h3>
+        <h1 className={styles.title}>Blog</h1>
         {(() => {
             const filtered = props.blogPosts
                 .filter(post => post.tags.indexOf('unreleased') == -1).reverse()
@@ -63,7 +63,7 @@ export const getStaticProps: GetStaticProps = async (contexto) => {
 export const getBlogPosts: (any) => Promise<BlogPost[]> = async (fs) => {
     const dir = path.join(process.cwd(), 'posts')
     const posts = fs.readdirSync(dir)
-    const result = posts.map(filename => {
+    const result = posts.map((filename: string) => {
         const filepath = path.join(dir, filename)
         return fs.readFileSync(filepath, 'utf8')
     })

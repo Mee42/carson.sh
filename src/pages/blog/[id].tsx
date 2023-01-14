@@ -7,6 +7,7 @@ import styles from "../../../styles/blogPost.module.scss";
 import ReactMarkdown from "react-markdown";
 import CodeBlock from "../../lib/CodeBlock";
 import Head from "next/head";
+import rehypeRaw from 'rehype-raw'
 
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {dark} from 'react-syntax-highlighter/dist/esm/styles/prism'
@@ -59,7 +60,7 @@ function render(post: string): JSX.Element {
       }
     };
     //return <p>todo</p> 
-    return <ReactMarkdown children={post} components={components}/>
+    return <ReactMarkdown rehypePlugins={[rehypeRaw]} children={post} components={components}/>
 //    return <ReactMarkdown 
 //                          source={post}
 //                          plugins={plugins}
