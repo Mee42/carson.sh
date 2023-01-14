@@ -4,7 +4,7 @@ import Header from "../Header"
 import styles from '../../styles/projects.module.scss'
 import Image from 'next/image'
 
-export const config = {unstable_runtimeJS: true}
+export const config = {unstable_runtimeJS: false}
 
 
 
