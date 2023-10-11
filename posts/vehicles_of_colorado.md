@@ -36,9 +36,6 @@ Seems like someone lives here? kinda wild
 ![](/vehicles/ski_lift.jpg)
 
 
-![](/vehicles/phonebooth.jpg)
-
-
 ![](/vehicles/plane1.jpg)
 
 
