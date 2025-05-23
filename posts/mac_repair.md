@@ -2,7 +2,7 @@
 id: 8
 title: Repairing a Macintosh Classic
 url: mac_repair
-desc: Repairing a 1992 Mac Classic
+desc: Or at least, attempting to
 date: 2022-01-14
 tags: hardware troubleshooting
 =====>>>>> content
@@ -31,7 +31,7 @@ And I've got one of them!
 Unfortunately, after turning it on, it doesn't *really* work
 
 <figure>
-    <img src="/line.jpg" title="flatland"/>
+    <img src="/img/line.jpg" title="flatland"/>
     <figcaption>After turning it on.</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ However, when probing the wire going directly from the Analog Control Board on t
 
 <figure>
   <img
-  src="/oscope.jpg"
+  src="/img/oscope.jpg"
   alt="A picture of a Mac Classic"
   title="It kinda looks like McDonalds.">
   <figcaption>
@@ -91,7 +91,7 @@ Additionally, the CMOS battery has a good chance of exploding and coating the in
 Luckily, people have already figured out what capacitors are needed.
 
 <figure>
-    <img src="/recap_guide.png" title=""/>
+    <img src="/img/recap_guide.png" title=""/>
     <figcaption>
     <a href="https://caps.wiki/wiki/Macintosh_Classic" class="extiw" title="en:Image:Cathode ray Tube.PNG">https://caps.wiki/wiki/Macintosh_Classic</a>
     </figcaption>

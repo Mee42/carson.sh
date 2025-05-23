@@ -1,7 +1,7 @@
 =====>>>>> header
 id: 1
 title: First Blog Post!
-url: first-post-on-carson-dot-sh
+url: first_post_on_carson_dot_sh
 desc: I'm really just testing the markdown toolkit
 date: 2020-08-10
 tags: meta testing

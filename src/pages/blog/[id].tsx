@@ -29,7 +29,11 @@ export default function Main(props: { id: number, post: BlogPost, urlParam: stri
         <Header title={post.title}/>
         <div className={styles.titleBar}>
             <div className={styles.title}>{post.title}</div>
-            <div className={styles.desc}>{post.desc}</div>
+            <div className={styles.info}>
+                <div className={styles.author}>{post.author}</div>
+                <div className={styles.date}>{post.date}</div>
+                <div className={styles.desc}>{post.desc}</div>
+            </div>
             {/*TODO add the tags to the blog page anyway*/}
         </div>
         <div className={styles.content + ' ' + styles.post}>

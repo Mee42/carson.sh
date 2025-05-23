@@ -9,10 +9,24 @@
   .title {
     font-size: 40px;
   }
-  .desc {
-    margin-top: 10px;
-    font-size: 15px;
+  .info {
+    display: flex;
+    flex-direction: row;
+    * {
+      margin-right: 20px;
+    }
+    .date, .desc, .author {
+      color: grey;
+      //margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .date {
+      //font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    }
   }
+
+
   .tags {
     background-color: #e3e3e3;
     border-radius: 5px;
@@ -20,7 +34,9 @@
     padding: 5px;
   }
 }
-
+.main {
+  margin: auto 1.5%;
+}
 .content {
   max-width: 750px;
   margin-left: auto;
