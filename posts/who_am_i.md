@@ -31,7 +31,7 @@ If I'm not responding to your texts, I'm probably in the middle of nowhere enjoy
 I started this website back in 2020 (I was 16) as `mee42.dev`. I was trying to find a universal username with <=5 characters and universal availability. Figuring out how to tell it to people in real life was the hard part.
 
 The server it ran on actually lived on the wall of my parent's basement for a couple years.
-![](server.png)
+![](/img/server.png)
 
 Then it was moved to my parent's old desktop, a Dell Studio Slim named `sorber` (released 2009) (right), for several years, before ending up on my friend [evelyn](https://evelynmau.de/)'s 2U box (left). Pictured are the two servers connected with a 10Gbps fiber link to bulk-transfer files.
 
