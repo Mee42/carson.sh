@@ -1,16 +1,14 @@
-import {getBlogPosts} from "../blog";
+import {getBlogPosts} from "../index";
 import fs from 'fs';
 import {BlogPost} from "../../lib/blogParser";
 import Header from "../../Header";
-import React from "react";
+import React, { JSX } from "react";
 import styles from "../../../styles/blogPost.module.scss";
 import ReactMarkdown from "react-markdown";
-import CodeBlock from "../../lib/CodeBlock";
 import Head from "next/head";
 import rehypeRaw from 'rehype-raw'
 
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import {dark} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 
 export const config = {unstable_runtimeJS: false}
@@ -60,6 +58,7 @@ function render(post: string): JSX.Element {
       }
     };
     //return <p>todo</p> 
+    // @ts-ignore
     return <ReactMarkdown rehypePlugins={[rehypeRaw]} children={post} components={components}/>
 //    return <ReactMarkdown 
 //                          source={post}

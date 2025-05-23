@@ -1,16 +1,6 @@
-.mainPage {
-  a {
-    text-decoration: none;
-    color: #005780;
-    transition: color 100ms;
-  }
 
-  a:hover {
-    color: #002b3e;
-  }
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+.posts {
+  margin: auto 10%;
 }
 
 .centerElement {
@@ -39,77 +29,53 @@
   }
 }
 
-
-.columnDiv {
-  margin-top: 70px;
-  margin-left: 5%;
-  margin-right: 5%;
+.selected {
+  background-color: #f0f0f0;
+  border: solid 5px #f0f0f0;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 3px 15px 3px 25px;
   display: flex;
   flex-direction: row;
-  .left {
-    //outline: solid red;
-    //flex-grow: 1;
-    margin-right: 3%;
-    width: 50%;
-  }
-  .right {
-    //outline: solid red;
-    //flex-grow: 1;
-    width: 50%;
-    margin-left: 3%;
+  align-items: center;
+  span {
+    font-size: 20px;
+    line-height: 1;
+    margin-right: 10px;
+    margin-bottom: 3px;
   }
 }
-
-.left, .right {
-  font-size: 2vmin;
+.blogPostTitle {
+  font-size: 15px;
+  padding-left: 10px;
 }
-.monospace {
+.blogPostDate {
+  font-size: 11px;
+  color: grey;
+  vertical-align: middle;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-.left {
-  //border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .linkbox {
-    margin-top: 10px;
-    width: 100%;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    text-align: center;
-    //width: fit-content;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    a {
-      margin-top: 10px;
-    }
-    font-size: 15px;
-  }
-  .gpgbox {
-    background-color: black;
-    color: white;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-right: 0;
-    margin-left: 0;
-    //border: solid black 3px
-    border-top: solid black 3px;
-    border-bottom: solid black 3px;
-    font-size: 15px;
-    //border-radius: 3px;
-  }
+
+.filteredOutEverything {
+  font-size: 12px;
+  color: grey;
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
 }
 
-.right {
-  //border: 1px solid black;
+.blogPostList {
   text-align: left;
-  //padding-top: 10px;
-  span {
-    padding-left: 10px;
+  list-style-type: none;
+  li {
+    margin: 7px 0;
   }
-  > div {
-    margin-top: 5px;
-  }
+  border-top: black 1px solid;
+  border-left: black 1px solid;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.monospace {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

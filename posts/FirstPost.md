@@ -1,8 +1,8 @@
 =====>>>>> header
 id: 1
 title: First Blog Post!
-url: first-post-on-mee42-dot-dev
-desc: This is the first blog post on this site, and where I'll be talking about random things, from programming to robotics
+url: first-post-on-carson-dot-sh
+desc: I'm really just testing the markdown toolkit
 date: 2020-08-10
 tags: meta testing
 =====>>>>> content
@@ -45,8 +45,9 @@ here is `some code exceprts` which should be in monospace and `markdown`.
 | HTML    | low vibe |
 | markdown | high vibe |
 
-> quoting someone
-> is nice
+> quoting 
+> 
+> pretty neat
 
 
 ```js

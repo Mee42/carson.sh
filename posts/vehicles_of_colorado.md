@@ -1,10 +1,10 @@
 =====>>>>> header
 id: 9
 title: Vehicles of Colorado
-url: vecicles-of-colorado
+url: vehicles-of-colorado
 desc: There's a lot of them
 date: 2023-08-23
-tags: vechicles colorado non-tech misc unreleased
+tags: vehicles colorado non-tech misc
 =====>>>>> content
 
 
@@ -21,8 +21,6 @@ I want one of these when I build my house
 
 ![](/vehicles/bus1.jpg)
 ![](/vehicles/bus2.jpg)
-Seems like someone lives here? kinda wild
-
 
 ![](/vehicles/corgie.jpg)
 

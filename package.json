@@ -4,15 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start",
-    "nextbuild": "next build",
-    "nextexport": "next export"
+    "build": "next build"
   },
   "dependencies": {
     "critters": "*",
     "next": "*",
     "prismjs": "*",
+    "prop-types": "^15.8.1",
     "react": "*",
     "react-dom": "*",
     "react-markdown": "*",

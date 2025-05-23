@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSX } from "react";
 
 import Header from "../Header"
 import styles from '../../styles/projects.module.scss'

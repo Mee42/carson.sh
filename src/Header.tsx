@@ -14,10 +14,10 @@ export default function Header(props: { title: String | null }) {
         <a href="/" className={styles.mainButton}>
             <code>carson.sh</code>
         </a>
-        <HeaderElement href="/" title="Home"/>
-        <HeaderElement href="/projects" title="Projects"/>
-        <HeaderElement href="/blog" title="Blog"/>
-        <HeaderElement href="https://github.com/mee42/" title="Github"/>
+        {/*<HeaderElement href="/" title="Home"/>*/}
+        {/*<HeaderElement href="/projects" title="Projects"/>*/}
+        {/*<HeaderElement href="/blog" title="Blog"/>*/}
+        {/*<HeaderElement href="https://github.com/mee42/" title="Github"/>*/}
     </header>
 }
 
