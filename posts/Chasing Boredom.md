@@ -26,7 +26,7 @@ I feel as though I shouldn't **need** to use tactics helpful for genuine addicts
 
 I've also left the majority of the discord servers I'm in. I have a list for ones to rejoin when I feel like I have control over my life, but for now, the benefit of not being in them outweighs what I'm "missing out on".
 
-*Stack Exchange* has also joined the list of internet services I literally cannot tear myself away from, after Reddit (and Youtube) was removed from my life. This list is both in my mind, and also in my [`/etc/hosts`](https://static.carson.sh/hosts) file, which works on Linux and Windows. Writing it down makes it feel more real, as well.
+*Stack Exchange* has also joined the list of internet services I literally cannot tear myself away from, after Reddit (and YouTube) was removed from my life. This list is both in my mind, and also in my [`/etc/hosts`](https://static.carson.sh/hosts) file, which works on Linux and Windows (why? I'll [never know](https://carson.sh/img/superuser.png))
 
 ```bash
 $ # on an aside, if you ever want to know every single stackexchange subdomain
