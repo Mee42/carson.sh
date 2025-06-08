@@ -11,10 +11,10 @@ tags: unreleased
 
 I'm a 21st century addict
 
-I've spent the last several months unsuccessfully trying to stop using Reddit for doomscrolling. I've deleted my accounts (front page Reddit is shit, but still content), I've tried uninstalling it, I've tried uninstalling the *google play store* - this worked well because I didn't know how to reinstall it, until I needed to download the metro app, I've tried having reddit.com not work on my laptops (but it's so easy to re-enable)
+I've spent the last several months unsuccessfully trying to stop using Reddit for doomscrolling. I've deleted my accounts (front page Reddit is shit, but still content), I've tried uninstalling it, I've tried uninstalling the *google play store* - this worked well because I didn't know how to reinstall it, until I needed to download the metro app. I've tried having reddit.com not work on my laptops (but it's so easy to re-enable)
 
 I just couldn't do it. You want to know what finally got me to put down Reddit for more than a few days? The fucking 'I am sober' app you see on 'beating addiction' subreddits. (fuck, more Reddit!)
-![](img/doomscrolling.png)
+![](/img/doomscrolling.png)
 What makes this system work is that it creates a concrete object (the timer on the screen) that means something (I have genuinely earned it). If I touch Reddit, I lose this "object" - even if I don't go and reset the timer, I still inherently know it would mean nothing.
 
 I feel as though I shouldn't **need** to use tactics helpful for genuine addicts to control my behavior - but this just proves the point. I'm actually an addict. And that's scary.
