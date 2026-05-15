@@ -39,8 +39,11 @@
 }
 .content_photo {
   max-width: 90vw;
-  p {
-    max-width: 1200px;
+  p:not(img, :has(img)) {
+    width: min(1200px, 90vw);
+    margin-right: auto;
+    margin-left: auto;
+
   }
   img {
     /* ensure that it always stays in the viewport */
