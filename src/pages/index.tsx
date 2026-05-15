@@ -20,7 +20,7 @@ function MainPage(props: { blogPosts: BlogPost[] }) {
     <div className={styles.posts}>
       {(() => {
         const filtered = props.blogPosts
-            .filter(post => post.tags.indexOf('unreleased') == -1).reverse()
+            .filter(post => post.tags.indexOf('unreleased') == -1).sort(function(a, b) { return a.date.localeCompare(b.date) }).reverse()
         if(filtered.length == 0) return <span className={styles.filteredOutEverything}>There doesn't seem to be any posts here</span>
         return makePostList(filtered)
 

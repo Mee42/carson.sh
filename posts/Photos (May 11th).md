@@ -1,11 +1,29 @@
 =====>>>>> header
 id: 12
-title: Photos from 2026-05-11
+title: I impulse bought a camera
 url: photos_2026_05_11
-desc: I impulse bought a camera
+desc: Photos from May 11th, 2026
 date: 2026-05-14
 tags: photography
 =====>>>>> content
+
+I bought a Canon EOS RP + an EF 24-105mm f/3.5-5.6 off of craigslist because I was tired of not owning a camera.
+
+I was looking for something that vaguely met these criteria
+- Packable/lightweight
+  - Mirrorless is the only thing that makes sense here
+  - Prime lenses are easier to get shorter?
+- EVF that works with glasses
+- Hand grip (which rules out most things smaller)
+- If I was going to buy a prime lens, more MP -> greater cropping ability?
+
+So this does pretty well! As a bonus, it's made in the last decade.
+
+I'm going to trade the lens in for a 50mm prime once I get around to it, people on the internet say the Canon 50mm RF f/1.8 
+is a quality lens for not being expensive, and it's also 40mm long.
+This is why most of these shots are at 50mm, or 50mm then cropped, as opposed to using the zoom lense I have.
+
+After taking these shots, the thing that is going to make me sad about running a 50mm prime is definitely birds. Tragic. At least the city birds are harder to scare.
 
 
 [![bird 1](/img/photos/2026-05-11/IMG_6270.jpg)](/img/photos/2026-05-11/IMG_6270.jpg)
