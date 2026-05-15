@@ -38,7 +38,10 @@
   margin: auto 1.5%;
 }
 .content_photo {
-  max-width: 1200px;
+  max-width: 90vw;
+  p {
+    max-width: 1200px;
+  }
   img {
     /* ensure that it always stays in the viewport */
     max-width: 90vw;
