@@ -24,7 +24,9 @@ export function parsePost(content: string): BlogPost {
         s => sections.filter(sec => sec[0] === s)[0][1]
     
     const headerSection = getSection("header").trim()
+
     const bodyContent = getSection("content").trim()
+    
     const metadata = parseHeader(headerSection)
     return {
         id: metadata.id,

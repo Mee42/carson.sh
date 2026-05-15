@@ -14,7 +14,7 @@ code {
 img {
   display: block;
   margin: 0 auto;
-  width: clamp(200px, 100%, 1200px);
+ /* width: clamp(200px, 100%, 1200px); */
 }
 
 body {

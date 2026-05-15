@@ -15,6 +15,8 @@ export const config = {unstable_runtimeJS: false}
 
 export default function Main(props: { id: number, post: BlogPost, urlParam: string }) {
     const { id, post } = props
+    let classname = styles.content + ' ' + styles.post + ' ' + (post.tags.includes("photography") ? styles.content_photo : styles.content_non_photo)
+
     return <div className={styles.main}>
         <Head>
             <title>mee42.dev | { post.title }</title>
@@ -36,7 +38,7 @@ export default function Main(props: { id: number, post: BlogPost, urlParam: stri
             </div>
             {/*TODO add the tags to the blog page anyway*/}
         </div>
-        <div className={styles.content + ' ' + styles.post}>
+        <div className={classname}>
             { render(post.content) }
         </div>
     </div>

@@ -37,16 +37,26 @@
 .main {
   margin: auto 1.5%;
 }
-.content {
+.content_photo {
+  max-width: 1200px;
+  img {
+    max-width: 1200px;
+    max-height: 90vh;
+    padding: 20px;
+  }
+}
+.content_non_photo {
   max-width: 750px;
+  img {
+    max-width: 750px;
+  }
+}
+.content {
   margin-left: auto;
   margin-right: auto;
   //font-size-adjust: 0.25;
   text-align: left;
   padding-bottom: 250px;
-  img {
-    max-width: 750px;
-  }
   
 }
 
