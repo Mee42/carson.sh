@@ -39,7 +39,7 @@
 }
 .content_photo {
   max-width: 90vw;
-  p:not(img, :has(img)) {
+  p:not(img, :has(img)), ul:not(img, :has(img)) {
     width: min(1200px, 90vw);
     margin-right: auto;
     margin-left: auto;
