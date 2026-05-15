@@ -20,7 +20,7 @@ I was looking for something that vaguely met these criteria
 So this does pretty well! As a bonus, it's made in the last decade.
 
 I'm going to trade the lens in for a 50mm prime once I get around to it, people on the internet say the Canon 50mm RF f/1.8 
-is a quality lens for not being expensive, and it's also 40mm long.
+is a quality lens for not being expensive, and it's also 40mm long (packable!).
 This is why most of these shots are at 50mm, or 50mm then cropped, as opposed to using the zoom lense I have.
 
 After taking these shots, the thing that is going to make me sad about running a 50mm prime is definitely birds. Tragic. At least the city birds are harder to scare.

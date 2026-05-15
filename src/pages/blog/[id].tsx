@@ -45,6 +45,7 @@ export default function Main(props: { id: number, post: BlogPost, urlParam: stri
 }
 function render(post: string): JSX.Element {
     const plugins = [];
+    let imageIndex = 0;
     const components = {
       code({node, inline, className, children, ...props}) {
         const match = /language-(\w+)/.exec(className || '')
@@ -61,6 +62,19 @@ function render(post: string): JSX.Element {
             {children}
           </code>
         )
+      },
+      img(props) {
+          const isFirstImage = imageIndex === 0;
+          imageIndex++;
+
+          return (
+            <img
+              {...props}
+              loading={isFirstImage ? "eager" : "lazy"}
+              decoding="async"
+              alt={props.alt || ""}
+            />
+          );
       }
     };
     //return <p>todo</p> 
