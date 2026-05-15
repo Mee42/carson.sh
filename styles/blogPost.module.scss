@@ -40,7 +40,8 @@
 .content_photo {
   max-width: 1200px;
   img {
-    max-width: 1200px;
+    /* ensure that it always stays in the viewport */
+    max-width: 90vw;
     max-height: 90vh;
     padding: 20px;
   }
