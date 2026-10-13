@@ -19,11 +19,11 @@ img {
 
 body {
   text-align: center;
-  background-color: white;
+  background-color: #414141;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  color: black;
+  color: white;
 }
 
 
@@ -33,9 +33,9 @@ span.token {
 
 a {
   text-decoration: none;
-  color: #417ca3;
+  color: #5ba9dc;
   transition: color 250ms;
 }
 a:hover {
-  color: #002b3e;
+  color: #a2e3ff;
 }

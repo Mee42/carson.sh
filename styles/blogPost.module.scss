@@ -16,7 +16,7 @@
       margin-right: 20px;
     }
     .date, .desc, .author {
-      color: grey;
+      color: #9c9c9c;
       //margin-top: 10px;
       font-size: 15px;
     }
@@ -82,13 +82,13 @@
     }
   }
   code {
-    $c: #fbedd4;
+    $c: #6c6c6c;
     background-color: $c;
     border: $c 3px;
     border-radius: 3px
   }
   blockquote {
-    color: #666;
+    color: #ababab;
     padding-left: 1em;
     padding-top: 1px;
     padding-bottom: 1px;
