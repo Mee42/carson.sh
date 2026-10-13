@@ -15,6 +15,9 @@ export const config = {unstable_runtimeJS: false}
 
 export default function Main(props: { id: number, post: BlogPost, urlParam: string }) {
     const { id, post } = props
+    if(post == null) {
+	    return <span>This post is hidden. go away !</span>
+    }
     let classname = styles.content + ' ' + styles.post + ' ' + (post.tags.includes("photography") ? styles.content_photo : styles.content_non_photo)
 
     return <div className={styles.main}>
@@ -93,10 +96,20 @@ function render(post: string): JSX.Element {
 // noinspection JSUnusedGlobalSymbols
 export async function getStaticProps(context) {
     const posts = await getBlogPosts(fs)
+    const post = posts.filter(p => p.id == context.params.id)
+    if(post.length == 0) {
+	    return {
+		    props: {
+			    id: context.params.id,
+			    post: null
+		    }
+	    }
+    }
+
     return {
         props: {
             id: context.params.id,
-            post: posts.filter(p => p.id == context.params.id)[0]
+            post: post[0]
         }
     }
 }
