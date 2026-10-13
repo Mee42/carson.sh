@@ -17,7 +17,8 @@
     "react-syntax-highlighter": "*",
     "rehype-raw": "^6.1.1",
     "remark-highlight.js": "*",
-    "sass": "*"
+    "sass": "*",
+    "wrangler": "^4.149.0"
   },
   "devDependencies": {
     "@types/node": "*",
